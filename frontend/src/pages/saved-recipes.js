@@ -71,22 +71,6 @@ export const SavedRecipes = () => {
     );
   }
   return (
-    // <div>
-    //   <h1>Saved Recipes</h1>
-    //   <ul>
-    //     {savedRecipes.slice().reverse().map((recipe) => (
-    //       <li key={recipe._id}>
-    //         <div>
-    //           <h2>{recipe.name}</h2>
-    //         </div>
-    //         {/* <p><RecipeContent content={recipe.content} /></p> */}
-    //         <img src={recipe.image} alt={recipe.name} />
-    //         <RecipeDeleteButton id={recipe.id} />
-    //         <button> <Link to={`/MoreDetails/${recipe.id}`}>More Details</Link> </button>
-    //       </li> 
-    //     ))}
-    //   </ul>
-    // </div>
     <div>
     <h1>Saved Recipes</h1>
     <ul>

@@ -33,7 +33,7 @@ export function MoreDetails() {
     const fetchRecipeDetails = async () => {
       try {
         const response = await axios.get(
-          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=bc1749a56ca24f19ab857ad313d10222`
+          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=4b0d0ffa57214d48bb73501e8b6aaadb`
         );
         setRecipeData(response.data);
       } catch (error) {
@@ -49,67 +49,6 @@ export function MoreDetails() {
   }
 
   return (
-//     <div>
-//       <h1>{recipeData.title}</h1>
-//       <img src={recipeData.image} alt={recipeData.title} />
-//       <h2>Summary</h2>
-//       <p><RecipeContent content={recipeData.summary} /></p>
-//       <h2>Ingredients:</h2>
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Name</th>
-//             <th>Amount</th>
-//             <th>Unit</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {recipeData.extendedIngredients.map((ingredient) => (
-//             <tr key={ingredient.id}>
-//               <td>{ingredient.name}</td>
-//               <td>{ingredient.amount}</td>
-//               <td>{ingredient.unit}</td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-
-
-//       <h2>Instructions:</h2>
-//       <ol>
-//         {recipeData.analyzedInstructions.map((instruction, index) => (
-//             <li key={index}>
-//             <h3>Instruction {index + 1}</h3>
-//             <ol>
-//                 {instruction.steps.map((step, stepIndex) => (
-//                 <li key={stepIndex}>{step.step}</li>
-//                 ))}
-//             </ol>
-//             </li>
-//         ))}
-//         </ol>
-//         <h2>Nutrition:</h2>
-//         <table>
-//             <thead>
-//             <tr>
-//                 <th>Name</th>
-//                 <th>Amount</th>
-//                 <th>Unit</th>
-//             </tr>
-//             </thead>
-//             <tbody>
-//             {recipeData.nutrition.nutrients.map((nutrient) => (
-//                 <tr key={nutrient.name}>
-//                 <td>{nutrient.name}</td>
-//                 <td>{nutrient.amount}</td>
-//                 <td>{nutrient.unit}</td>
-//                 </tr>
-//             ))}
-//             </tbody>
-//         </table>
-//     </div>
-//   );
-
     <div className="container">
       <h1>{recipeData.title}</h1>
       <img src={recipeData.image} alt={recipeData.title} />

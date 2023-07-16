@@ -29,11 +29,11 @@ const recipeSchema = mongoose.Schema(
     },
     type:{
         type: String,
-        required: [true],
+        required: [false],
     },
     relevance:{
         type: Number,
-        required: [true],
+        required: [false],
     },
     content:{
         type:String,

@@ -43,7 +43,7 @@ export function Home() {
     if(e.target.value!=""){
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?cuisine=${e.target.value}&apiKey=bc1749a56ca24f19ab857ad313d10222`
+        `https://api.spoonacular.com/recipes/complexSearch?cuisine=${e.target.value}&apiKey=4b0d0ffa57214d48bb73501e8b6aaadb`
       );
       const data = await response.json();
       const recipes = [];
@@ -67,7 +67,7 @@ export function Home() {
     if(searchQuery!=""){
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/food/search?query=${searchQuery}&apiKey=bc1749a56ca24f19ab857ad313d10222`
+        `https://api.spoonacular.com/food/search?query=${searchQuery}&apiKey=4b0d0ffa57214d48bb73501e8b6aaadb`
       );  
       const data = await response.json();
       setSearchResults(data.searchResults[0].results);
@@ -103,8 +103,9 @@ export function Home() {
           <li key={result.id}>
             <div>{result.name}</div>
             <img src={result.image} alt={result.name} />
-            <SaveButton result={result}/>
+            <div className="button-group"><SaveButton result={result}/>
             <button> <Link to={`/MoreDetails/${result.id}`}>More Details</Link> </button> 
+            </div>
           </li>
         ))}
       </ul>

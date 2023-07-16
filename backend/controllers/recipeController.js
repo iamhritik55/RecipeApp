@@ -21,7 +21,7 @@ const createRecipe = asyncHandler(async (req, res) => {
 });
 
 const deleteRecipe = asyncHandler(async (req, res) => {
-  const recipeListFetched= await Recipe.find({id : req.params.id});
+  const recipeListFetched= await Recipe.find({id : req.params.id ,user_id:req.user.id});
   const recipe=recipeListFetched[0];
 
   if (!recipe) {
