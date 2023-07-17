@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useGetUserID } from "../hooks/useGetUserID";
+import { useGetUserID } from "../util/useGetUserID";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { resolvePath ,Link} from "react-router-dom";
@@ -82,7 +82,7 @@ export const SavedRecipes = () => {
             <div className="button-group">
               <RecipeDeleteButton id={recipe.id} />
               <button>
-                <Link to={`/MoreDetails/${recipe.id}`}>More Details</Link>
+                <Link to={`/more-details/${recipe.id}`}>More Details</Link>
               </button>
             </div>
           </div>

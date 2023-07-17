@@ -33,7 +33,7 @@ export function MoreDetails() {
     const fetchRecipeDetails = async () => {
       try {
         const response = await axios.get(
-          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=4b0d0ffa57214d48bb73501e8b6aaadb`
+          `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=bc1749a56ca24f19ab857ad313d10222`
         );
         setRecipeData(response.data);
       } catch (error) {

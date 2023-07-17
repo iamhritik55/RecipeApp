@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useGetUserID } from "../hooks/useGetUserID";
+import { useGetUserID } from "../util/useGetUserID";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-import {MoreDetails} from "./MoreDetails";
+import {MoreDetails} from "./moreDetails";
 import { useNavigate , Link} from 'react-router-dom';
 
 function SaveButton({ result }) {
@@ -43,7 +43,7 @@ export function Home() {
     if(e.target.value!=""){
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?cuisine=${e.target.value}&apiKey=4b0d0ffa57214d48bb73501e8b6aaadb`
+        `https://api.spoonacular.com/recipes/complexSearch?cuisine=${e.target.value}&apiKey=bc1749a56ca24f19ab857ad313d10222`
       );
       const data = await response.json();
       const recipes = [];
@@ -67,7 +67,7 @@ export function Home() {
     if(searchQuery!=""){
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/food/search?query=${searchQuery}&apiKey=4b0d0ffa57214d48bb73501e8b6aaadb`
+        `https://api.spoonacular.com/food/search?query=${searchQuery}&apiKey=bc1749a56ca24f19ab857ad313d10222`
       );  
       const data = await response.json();
       setSearchResults(data.searchResults[0].results);
@@ -104,7 +104,7 @@ export function Home() {
             <div>{result.name}</div>
             <img src={result.image} alt={result.name} />
             <div className="button-group"><SaveButton result={result}/>
-            <button> <Link to={`/MoreDetails/${result.id}`}>More Details</Link> </button> 
+            <button> <Link to={`/more-details/${result.id}`}>More Details</Link> </button> 
             </div>
           </li>
         ))}
