@@ -33,7 +33,7 @@ const deleteRecipe = asyncHandler(async (req, res) => {
     console.log(recipe.user_id," ",req.user.id)
     throw new Error("User don't have permission to update other user recipes");
   }
-  await Recipe.deleteOne({ id: req.params.id });
+  await Recipe.deleteOne({ id : req.params.id ,user_id:req.user.id});
   res.status(200).json(recipe);
 });
 
